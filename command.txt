@@ -1,0 +1,12 @@
+python3.6 -m venv project-name       => create viritual env
+source bin/activate                  => to activate venu
+
+pip install gunicorn                 => to deploy heroku
+pip freeze > requirements.txt        => to list down the dependencies of your application
+
+echo "web: python app.py" > Procfile => Heroku to understand which piece of your code to run to start the application. 
+
+                                     => Set the python version in the runtime.txt file in the root folder.
+
+pip freeze > requirements.txt       => to list down the dependencies of your application.
+
