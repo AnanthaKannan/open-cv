@@ -1,6 +1,4 @@
-# Translation means move your image up down left and right
-# trans matrix
-# T = ([1, 0 tx], [0, 1, ty])
+
 import numpy as np
 import cv2 as cv
 
@@ -11,13 +9,17 @@ img = cv.resize(img,(960,600))
 
 # store height and width of the image
 height, width = img.shape[:2]
-quater_height, quater_width = height/4, width/4
-# T is our trasisiton matrix
-T = np.float32([[1, 0, quater_width], [0, 1, quater_height]])
 
-# warpAffine function used to transform the image
-img_translation = cv.warpAffine(img, T, (width, height))
-cv.imshow('translation', img_translation)
+# Divee by two rotoate the image around its center
+# rotation center x, rotation centery, angle of routation, scale 
+rotation_matrix = cv.getRotationMatrix2D((width/2, height/2), 90, 1)
+rotate_image = cv.warpAffine(img, rotation_matrix, (width, height))
+cv.imshow('rotate_image', rotate_image)
+
+
+# Remove the black space around the image
+transpose = cv.transpose(img)
+cv.imshow('transpose', transpose)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
