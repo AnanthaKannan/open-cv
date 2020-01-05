@@ -25,7 +25,8 @@ cv.polylines(image, [points], True, (0, 0, 255), 3)
 
 
 # Add text
-
+# image, textDisplay, bottom left starting point, font, font size, color, thickness
+cv.putText(image, 'Hello world!', (75, 300), cv.FONT_HERSHEY_COMPLEX, 2, (100, 170, 0), 3)
 
 cv.imshow('line', image)
 cv.waitKey(0)
