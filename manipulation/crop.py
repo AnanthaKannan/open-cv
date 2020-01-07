@@ -18,4 +18,4 @@ cropped_img = img[start_row: end_row, start_col: end_col]
 
 cv.imshow('cropped_img', cropped_img)
 cv.waitKey(0)
-# cv.destroyAllWindows()
+cv.destroyAllWindows()
