@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+import matplotlib.pyplot as plt
 
 # create a black image
 image = np.zeros((512, 512, 3), np.uint8)
