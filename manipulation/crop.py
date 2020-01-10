@@ -15,6 +15,7 @@ end_row, end_col = int(height * .75), int(width * .75)
 
 # simply use indexing to crop out the rectangle we desigre
 cropped_img = img[start_row: end_row, start_col: end_col]
+print(start_row, end_row, start_col, end_col)
 
 cv.imshow('cropped_img', cropped_img)
 cv.waitKey(0)
