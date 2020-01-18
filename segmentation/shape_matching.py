@@ -25,7 +25,7 @@ template_contours = contours[1]
 
 # find contours from target image
 contours, hierarcy = cv.findContours(thresh2, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE)
-
+target_cpy = target.copy()
 for c in contours:
     match = cv.matchShapes(template_contours, c, 1, 0.0)
     print(match)
